@@ -47,3 +47,5 @@ export type {
 export { caf32 } from "./data/caf32.js";
 export { caf40 } from "./data/caf40.js";
 export { v32ToV40, mapForward } from "./data/mapping.js";
+export { frameworkGraph, mappingGraph } from "./graph.js";
+export type { Graph, GraphEdge, GraphNode } from "./graph.js";

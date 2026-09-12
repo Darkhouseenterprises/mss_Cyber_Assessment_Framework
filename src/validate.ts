@@ -5,9 +5,13 @@
  *     npm run validate
  */
 
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { caf32 } from "./data/caf32.js";
 import { caf40 } from "./data/caf40.js";
 import { v32ToV40 } from "./data/mapping.js";
+import { frameworkGraph, mappingGraph } from "./graph.js";
 import {
   FrameworkSchema,
   MappingArraySchema,
@@ -122,6 +126,36 @@ if (t40.outcomes !== 41) {
   process.exit(1);
 }
 
+const STOPWORD = /\b(the|and|of|to|for|with|a|an|in|on|or)$/i;
+function assertComplete(framework: typeof caf40, label: string): void {
+  const cut: string[] = [];
+  for (const objective of framework.objectives) {
+    for (const principle of objective.principles) {
+      for (const outcome of principle.outcomes) {
+        for (const ind of outcome.indicators) {
+          const t = ind.text.trim();
+          if (STOPWORD.test(t) || /[A-Za-z]-$/.test(t) || /^[a-z]/.test(t)) {
+            cut.push(`${ind.id}: ${t.slice(0, 80)}`);
+          }
+        }
+      }
+    }
+  }
+  if (cut.length) {
+    console.error(`${label} truncated indicator text:`);
+    for (const line of cut) console.error(`  - ${line}`);
+    process.exit(1);
+  }
+}
+assertComplete(caf32, "CAF v3.2");
+assertComplete(caf40, "CAF v4.0");
+
+const a4bA5 = findOutcome(caf40, "A4.b")?.indicators.find((i) => i.id === "A4.b.A.5");
+if (!a4bA5) {
+  console.error("CAF v4.0 missing A4.b.A.5 (page-split Achieved IGP)");
+  process.exit(1);
+}
+
 const byChange: Record<string, number> = {};
 for (const row of v32ToV40) {
   byChange[row.change] = (byChange[row.change] ?? 0) + 1;
@@ -156,3 +190,25 @@ console.log(`  rows:        ${v32ToV40.length}`);
 for (const k of ["unchanged", "rewritten", "split", "merged", "removed", "new"]) {
   if (byChange[k]) console.log(`  ${k.padEnd(12)}${byChange[k]}`);
 }
+
+const g40 = frameworkGraph(caf40);
+const g32 = frameworkGraph(caf32);
+const gMap = mappingGraph(caf32, caf40, v32ToV40);
+const graphs = {
+  "CAF v4.0": g40,
+  "CAF v3.2": g32,
+  "v3.2 → v4.0": gMap,
+};
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const dir = join(root, "graph");
+mkdirSync(dir, { recursive: true });
+writeFileSync(join(dir, "graph.json"), JSON.stringify(graphs, null, 2));
+writeFileSync(
+  join(dir, "data.js"),
+  `window.MSS_GRAPHS = ${JSON.stringify(graphs)};\n`
+);
+console.log("");
+console.log("graph");
+console.log(`  v4.0:        ${g40.nodes.length} nodes, ${g40.edges.length} edges`);
+console.log(`  v3.2:        ${g32.nodes.length} nodes, ${g32.edges.length} edges`);
+console.log(`  mapping:     ${gMap.nodes.length} nodes, ${gMap.edges.length} edges`);

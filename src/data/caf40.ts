@@ -636,7 +636,7 @@ export const caf40: Framework = {
                   "id": "A3.a.NA.5",
                   "outcomeId": "A3.a",
                   "level": "not-achieved",
-                  "text": "Asset inventories are neglected and out of date. Not Achieved At least one of the following statements is true",
+                  "text": "Asset inventories are neglected and out of date. Not Achieved",
                   "index": 5
                 },
                 {
@@ -892,92 +892,92 @@ export const caf40: Framework = {
                   "id": "A4.b.PA.3",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "You consider the security of environments (e.g. development, test and production), including source code and repositories, used in the production of software to",
+                  "text": "You consider the security of environments (e.g. development, test and production), including source code and repositories, used in the production of software to be appropriate and proportionate within the context of common threats.",
                   "index": 3
                 },
                 {
                   "id": "A4.b.PA.4",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "be appropriate and proportionate within the context of common threats.",
+                  "text": "The testing regime uses a range of different approaches (e.g. static and dynamic analysis, unit and integration testing and point in time assessments) that verify all aspects of the development lifecycle covering both functional and non-functional testing.",
                   "index": 4
                 },
                 {
                   "id": "A4.b.PA.5",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "The testing regime uses a range of different approaches (e.g. static and dynamic analysis, unit and integration testing and point in time assessments) that verify all aspects of the development lifecycle covering both functional and non-functional testing.",
+                  "text": "You have arrangements in place with your software supplier to receive timely security updates, patches and notifications.",
                   "index": 5
                 },
                 {
                   "id": "A4.b.PA.6",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "You have arrangements in place with your software supplier to receive timely security updates, patches and notifications.",
+                  "text": "Software, including updates and patches, is obtained from your supplier(s) via secure channels.",
                   "index": 6
                 },
                 {
                   "id": "A4.b.PA.7",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "Software, including updates and patches, is obtained from your supplier(s) via secure channels.",
+                  "text": "Your software supplier(s) has processes in place to identify, report and mitigate security vulnerabilities.",
                   "index": 7
                 },
                 {
                   "id": "A4.b.PA.8",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "Your software supplier(s) has processes in place to identify, report and mitigate security vulnerabilities.",
+                  "text": "You have arrangements in place with your software supplier to be notified of any significant events that may adversely impact network and information systems supporting your essential function(s).",
                   "index": 8
                 },
                 {
                   "id": "A4.b.PA.9",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "You have arrangements in place with your software supplier to be notified of any significant events that may adversely impact network and information systems supporting your essential function(s).",
+                  "text": "If open-source software is used, you have taken appropriate and proportionate steps to establish and maintain sufficient confidence in its security for its use.",
                   "index": 9
                 },
                 {
                   "id": "A4.b.PA.10",
                   "outcomeId": "A4.b",
                   "level": "partially-achieved",
-                  "text": "If open-source software is used, you have taken appropriate and proportionate steps to establish and maintain sufficient confidence in its security for its use.",
-                  "index": 10
-                },
-                {
-                  "id": "A4.b.PA.11",
-                  "outcomeId": "A4.b",
-                  "level": "partially-achieved",
                   "text": "You have appropriate support and maintenance arrangements in place.",
-                  "index": 11
+                  "index": 10
                 },
                 {
                   "id": "A4.b.A.1",
                   "outcomeId": "A4.b",
                   "level": "achieved",
-                  "text": "software, and those components are being monitored for new vulnerabilities throughout the lifespan of the product.",
+                  "text": "Your software supplier(s) leverages an established secure software development framework (e.g. NIST Secure Software Development Framework (SSDF), Microsoft Secure Development Lifecycle (SDL)).",
                   "index": 1
                 },
                 {
                   "id": "A4.b.A.2",
                   "outcomeId": "A4.b",
                   "level": "achieved",
-                  "text": "You consider the security of environments (e.g. development, test, and production), including source code and repositories, used in the production of software to be appropriate and proportionate within the context of capable and well-resourced threat actors .",
+                  "text": "Your software supplier can demonstrate a thorough understanding of the composition and provenance of software provided to you, including any third-party components used in the development of that software, and those components are being monitored for new vulnerabilities throughout the lifespan of the product.",
                   "index": 2
                 },
                 {
                   "id": "A4.b.A.3",
                   "outcomeId": "A4.b",
                   "level": "achieved",
-                  "text": "The software development lifecycle is informed by a detailed and up to date understanding of threat and applies appropriate techniques, such as threat modelling, to identify and assess potential vulnerabilities and attack vectors .",
+                  "text": "You consider the security of environments (e.g. development, test, and production), including source code and repositories, used in the production of software to be appropriate and proportionate within the context of capable and well-resourced threat actors.",
                   "index": 3
                 },
                 {
                   "id": "A4.b.A.4",
                   "outcomeId": "A4.b",
                   "level": "achieved",
-                  "text": "You can attest to the authenticity and integrity of software, including updates and patches.",
+                  "text": "The software development lifecycle is informed by a detailed and up to date understanding of threat and applies appropriate techniques, such as threat modelling, to identify and assess potential vulnerabilities and attack vectors.",
                   "index": 4
+                },
+                {
+                  "id": "A4.b.A.5",
+                  "outcomeId": "A4.b",
+                  "level": "achieved",
+                  "text": "You can attest to the authenticity and integrity of software, including updates and patches.",
+                  "index": 5
                 }
               ]
             }
@@ -1278,36 +1278,50 @@ export const caf40: Framework = {
                   "id": "B2.a.PA.1",
                   "outcomeId": "B2.a",
                   "level": "partially-achieved",
-                  "text": "necessary to support your essential function(s).",
+                  "text": "Your process of initial identity verification is robust enough to provide a reasonable level of confidence of a user's identity profile before allowing an authorised user access to network and information systems that support your essential function(s).",
                   "index": 1
                 },
                 {
                   "id": "B2.a.PA.2",
                   "outcomeId": "B2.a",
                   "level": "partially-achieved",
-                  "text": "You use additional strong authentication mechanisms, such as multi-factor authentication (MFA), for privileged access to all network and information systems that operate or support your essential function(s).",
+                  "text": "All authorised users and systems with access to network and information systems supporting your essential function(s) are individually identified and authenticated.",
                   "index": 2
                 },
                 {
                   "id": "B2.a.PA.3",
                   "outcomeId": "B2.a",
                   "level": "partially-achieved",
-                  "text": "You individually authenticate and authorise all remote access to all network and information systems that support your essential function(s).",
+                  "text": "The number of authorised users and systems that have access to network and information systems is limited to the minimum necessary to support your essential function(s).",
                   "index": 3
                 },
                 {
                   "id": "B2.a.PA.4",
                   "outcomeId": "B2.a",
                   "level": "partially-achieved",
-                  "text": "The list of users and systems with access to network and information systems supporting and delivering the essential function(s) is reviewed on a regular basis, at least annually.",
+                  "text": "You use additional strong authentication mechanisms, such as multi-factor authentication (MFA), for privileged access to all network and information systems that operate or support your essential function(s).",
                   "index": 4
                 },
                 {
                   "id": "B2.a.PA.5",
                   "outcomeId": "B2.a",
                   "level": "partially-achieved",
-                  "text": "Your approach to authenticating users, devices and systems follows up to date best practice.",
+                  "text": "You individually authenticate and authorise all remote access to all network and information systems that support your essential function(s).",
                   "index": 5
+                },
+                {
+                  "id": "B2.a.PA.6",
+                  "outcomeId": "B2.a",
+                  "level": "partially-achieved",
+                  "text": "The list of users and systems with access to network and information systems supporting and delivering the essential function(s) is reviewed on a regular basis, at least annually.",
+                  "index": 6
+                },
+                {
+                  "id": "B2.a.PA.7",
+                  "outcomeId": "B2.a",
+                  "level": "partially-achieved",
+                  "text": "Your approach to authenticating users, devices and systems follows up to date best practice.",
+                  "index": 7
                 },
                 {
                   "id": "B2.a.A.1",
@@ -1327,36 +1341,29 @@ export const caf40: Framework = {
                   "id": "B2.a.A.3",
                   "outcomeId": "B2.a",
                   "level": "achieved",
-                  "text": "The number of authorised users and systems that have access to network and information systems is limited to the minimum",
+                  "text": "The number of authorised users and systems that have access to network and information systems is limited to the minimum necessary to support your essential function(s).",
                   "index": 3
                 },
                 {
                   "id": "B2.a.A.4",
                   "outcomeId": "B2.a",
                   "level": "achieved",
-                  "text": "necessary to support your essential function(s).",
+                  "text": "You use additional strong authentication mechanisms, such as multi-factor authentication (MFA), for all user access, including remote access, to all network and information systems that operate or support your essential function(s).",
                   "index": 4
                 },
                 {
                   "id": "B2.a.A.5",
                   "outcomeId": "B2.a",
                   "level": "achieved",
-                  "text": "You use additional strong authentication mechanisms, such as multi-factor authentication (MFA), for all user access, including remote access, to all network and information systems that operate or support your essential function(s).",
+                  "text": "The list of users and systems with access to network and information systems supporting and delivering the essential function(s) is reviewed on a regular basis, at least every six months.",
                   "index": 5
                 },
                 {
                   "id": "B2.a.A.6",
                   "outcomeId": "B2.a",
                   "level": "achieved",
-                  "text": "The list of users and systems with access to network and information systems supporting and delivering the essential function(s) is reviewed on a regular basis, at least every six months.",
-                  "index": 6
-                },
-                {
-                  "id": "B2.a.A.7",
-                  "outcomeId": "B2.a",
-                  "level": "achieved",
                   "text": "Your approach to authenticating users, devices and systems follows up to date best practice.",
-                  "index": 7
+                  "index": 6
                 }
               ]
             },
@@ -1454,7 +1461,7 @@ export const caf40: Framework = {
                   "id": "B2.b.A.4",
                   "outcomeId": "B2.b",
                   "level": "achieved",
-                  "text": "You perform regular scans to detect unknown devices and investigate any findings. Achieved",
+                  "text": "You perform regular scans to detect unknown devices and investigate any findings.",
                   "index": 4
                 }
               ]
@@ -1718,7 +1725,7 @@ export const caf40: Framework = {
                   "id": "B3.a.PA.1",
                   "outcomeId": "B3.a",
                   "level": "partially-achieved",
-                  "text": "of network and information systems supporting your essential function(s).",
+                  "text": "You regularly review location, transmission, quantity and quality of data important to the operation of network and information systems supporting your essential function(s).",
                   "index": 1
                 },
                 {
@@ -1739,7 +1746,7 @@ export const caf40: Framework = {
                   "id": "B3.a.PA.4",
                   "outcomeId": "B3.a",
                   "level": "partially-achieved",
-                  "text": "You occasionally validate these documented impact statements. Partially Achieved",
+                  "text": "You occasionally validate these documented impact statements.",
                   "index": 4
                 },
                 {
@@ -1760,57 +1767,50 @@ export const caf40: Framework = {
                   "id": "B3.a.A.3",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "You maintain a current understanding of the location, quantity and quality of data important to the",
+                  "text": "You maintain a current understanding of the location, quantity and quality of data important to the operation of network and information systems supporting your essential function(s).",
                   "index": 3
                 },
                 {
                   "id": "B3.a.A.4",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "operation of network and information systems supporting your essential function(s).",
+                  "text": "You take steps to remove or minimise unnecessary copies or unneeded historic data.",
                   "index": 4
                 },
                 {
                   "id": "B3.a.A.5",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "You take steps to remove or minimise unnecessary copies or unneeded historic data.",
+                  "text": "You have identified all mobile devices and media that may hold data important to the operation of network and information systems supporting your essential function(s).",
                   "index": 5
                 },
                 {
                   "id": "B3.a.A.6",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "You have identified all mobile devices and media that may hold data important to the operation of network and information systems supporting your essential function(s).",
+                  "text": "You maintain a current understanding of the data links used to transmit data that is important to network and information systems supporting your essential function(s).",
                   "index": 6
                 },
                 {
                   "id": "B3.a.A.7",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "You maintain a current understanding of the data links used to transmit data that is important to network and information systems supporting your essential function(s).",
+                  "text": "You understand the context, limitations and dependencies of your important data.",
                   "index": 7
                 },
                 {
                   "id": "B3.a.A.8",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "You understand the context, limitations and dependencies of your important data.",
+                  "text": "You understand and document the impact on your essential function(s) of all relevant scenarios, including unauthorised data access, uncontrolled release, modification or deletion, or when authorised users are unable to appropriately access this data.",
                   "index": 8
                 },
                 {
                   "id": "B3.a.A.9",
                   "outcomeId": "B3.a",
                   "level": "achieved",
-                  "text": "You understand and document the impact on your essential function(s) of all relevant scenarios, including unauthorised data access, uncontrolled release, modification or deletion, or when authorised users are unable to appropriately access this data.",
-                  "index": 9
-                },
-                {
-                  "id": "B3.a.A.10",
-                  "outcomeId": "B3.a",
-                  "level": "achieved",
                   "text": "You validate these documented impact statements regularly, at least annually.",
-                  "index": 10
+                  "index": 9
                 }
               ]
             },
@@ -2793,15 +2793,8 @@ export const caf40: Framework = {
                   "id": "B6.a.PA.4",
                   "outcomeId": "B6.a",
                   "level": "partially-achieved",
-                  "text": "You identify and address issues that inhibit people",
+                  "text": "You identify and address issues that inhibit people from behaving in a manner that supports your intended cyber security outcomes.",
                   "index": 4
-                },
-                {
-                  "id": "B6.a.PA.5",
-                  "outcomeId": "B6.a",
-                  "level": "partially-achieved",
-                  "text": "from behaving in a manner that supports your intended cyber security outcomes.",
-                  "index": 5
                 },
                 {
                   "id": "B6.a.A.1",
@@ -2828,29 +2821,22 @@ export const caf40: Framework = {
                   "id": "B6.a.A.4",
                   "outcomeId": "B6.a",
                   "level": "achieved",
-                  "text": "Your management is seen to be committed to and",
+                  "text": "Your management is seen to be committed to and actively involved in cyber security.",
                   "index": 4
                 },
                 {
                   "id": "B6.a.A.5",
                   "outcomeId": "B6.a",
                   "level": "achieved",
-                  "text": "actively involved in cyber security.",
+                  "text": "Your organisation communicates openly about cyber security, with any concern being taken seriously.",
                   "index": 5
                 },
                 {
                   "id": "B6.a.A.6",
                   "outcomeId": "B6.a",
                   "level": "achieved",
-                  "text": "Your organisation communicates openly about cyber security, with any concern being taken seriously.",
-                  "index": 6
-                },
-                {
-                  "id": "B6.a.A.7",
-                  "outcomeId": "B6.a",
-                  "level": "achieved",
                   "text": "People across your organisation collaborate in cyber security activities and improvements, building joint ownership and bringing knowledge of their area of expertise.",
-                  "index": 7
+                  "index": 6
                 }
               ]
             },
@@ -4134,36 +4120,29 @@ export const caf40: Framework = {
                   "id": "D1.b.A.3",
                   "outcomeId": "D1.b",
                   "level": "achieved",
-                  "text": "Your response team members have the skills and knowledge required to decide on",
+                  "text": "Your response team members have the skills and knowledge required to decide on the response actions necessary to limit harm, and the authority to carry them out.",
                   "index": 3
                 },
                 {
                   "id": "D1.b.A.4",
                   "outcomeId": "D1.b",
                   "level": "achieved",
-                  "text": "the response actions necessary to limit harm, and the authority to carry them out.",
+                  "text": "Key roles are duplicated, and operational delivery knowledge is shared with all individuals involved in the operations and recovery of the essential function(s).",
                   "index": 4
                 },
                 {
                   "id": "D1.b.A.5",
                   "outcomeId": "D1.b",
                   "level": "achieved",
-                  "text": "Key roles are duplicated, and operational delivery knowledge is shared with all individuals involved in the operations and recovery of the essential function(s).",
+                  "text": "Back-up mechanisms are available that can be readily activated to allow continued operation of your essential function(s), although possibly at a reduced level, if primary network and information systems fail or are unavailable.",
                   "index": 5
                 },
                 {
                   "id": "D1.b.A.6",
                   "outcomeId": "D1.b",
                   "level": "achieved",
-                  "text": "Back-up mechanisms are available that can be readily activated to allow continued operation of your essential function(s), although possibly at a reduced level, if primary network and information systems fail or are unavailable.",
+                  "text": "Arrangements exist to augment your organisation's incident response capabilities with external support if necessary (e.g. specialist cyber incident responders).",
                   "index": 6
-                },
-                {
-                  "id": "D1.b.A.7",
-                  "outcomeId": "D1.b",
-                  "level": "achieved",
-                  "text": "Arrangements exist to augment your organisation's incident response capabilities with external support if necessary (e.g. specialist cyber incident responders). Not Achieved",
-                  "index": 7
                 }
               ]
             },

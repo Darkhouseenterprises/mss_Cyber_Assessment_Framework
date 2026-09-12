@@ -528,36 +528,29 @@ export const caf32: Framework = {
                   "id": "A3.a.A.2",
                   "outcomeId": "A3.a",
                   "level": "achieved",
-                  "text": "Dependencies on supporting infrastructure (e.g.",
+                  "text": "Dependencies on supporting infrastructure (e.g. power, cooling etc) are recognised and recorded.",
                   "index": 2
                 },
                 {
                   "id": "A3.a.A.3",
                   "outcomeId": "A3.a",
                   "level": "achieved",
-                  "text": "power, cooling etc) are recognised and recorded.",
+                  "text": "You have prioritised your assets according to their importance to the operation of the essential function(s).",
                   "index": 3
                 },
                 {
                   "id": "A3.a.A.4",
                   "outcomeId": "A3.a",
                   "level": "achieved",
-                  "text": "You have prioritised your assets according to their importance to the operation of the essential function(s).",
+                  "text": "You have assigned responsibility for managing all assets, including physical assets, relevant to the operation of the essential function(s).",
                   "index": 4
                 },
                 {
                   "id": "A3.a.A.5",
                   "outcomeId": "A3.a",
                   "level": "achieved",
-                  "text": "You have assigned responsibility for managing all assets, including physical assets, relevant to the operation of the essential function(s).",
-                  "index": 5
-                },
-                {
-                  "id": "A3.a.A.6",
-                  "outcomeId": "A3.a",
-                  "level": "achieved",
                   "text": "Assets relevant to the essential function(s) are managed with cyber security in mind throughout their lifecycle, from creation through to eventual decommissioning or disposal.",
-                  "index": 6
+                  "index": 5
                 }
               ]
             }
@@ -579,7 +572,7 @@ export const caf32: Framework = {
                   "id": "A4.a.NA.1",
                   "outcomeId": "A4.a",
                   "level": "not-achieved",
-                  "text": "At least one of the following statements is true You do not know what data belonging to you is held by suppliers, or how it is managed.",
+                  "text": "You do not know what data belonging to you is held by suppliers, or how it is managed.",
                   "index": 1
                 },
                 {
@@ -663,7 +656,7 @@ export const caf32: Framework = {
                   "id": "A4.a.A.1",
                   "outcomeId": "A4.a",
                   "level": "achieved",
-                  "text": "All the following statements are true You have a deep understanding of your supply chain, including sub-contractors and the wider risks it faces. You consider factors such as supplier's partnerships, competitors, nationality and other organisations with which they sub-contract. This informs your risk assessment and procurement processes.",
+                  "text": "You have a deep understanding of your supply chain, including sub-contractors and the wider risks it faces. You consider factors such as supplier's partnerships, competitors, nationality and other organisations with which they sub-contract. This informs your risk assessment and procurement processes.",
                   "index": 1
                 },
                 {
@@ -1011,7 +1004,7 @@ export const caf32: Framework = {
                   "id": "B2.a.PA.1",
                   "outcomeId": "B2.a",
                   "level": "partially-achieved",
-                  "text": "Your process of initial identity verification is robust enough to provide a reasonable level of confidence of a user's identity profile before allowing an authorised user access to network and information systems that support your essential function(s).",
+                  "text": "The number of authorised users and systems that have access to network and information systems is limited to the minimum necessary to support your essential function(s).",
                   "index": 1
                 },
                 {
@@ -1216,57 +1209,43 @@ export const caf32: Framework = {
                   "id": "B2.c.NA.2",
                   "outcomeId": "B2.c",
                   "level": "not-achieved",
-                  "text": "Privileged user access to network and information systems supporting your essential function(s) is via weak authentication mechanisms (e.g.",
+                  "text": "Privileged user access to network and information systems supporting your essential function(s) is via weak authentication mechanisms (e.g. only simple passwords).",
                   "index": 2
                 },
                 {
                   "id": "B2.c.NA.3",
                   "outcomeId": "B2.c",
                   "level": "not-achieved",
-                  "text": "only simple passwords).",
+                  "text": "The list of privileged users has not been reviewed recently (e.g. within the last 12 months).",
                   "index": 3
                 },
                 {
                   "id": "B2.c.NA.4",
                   "outcomeId": "B2.c",
                   "level": "not-achieved",
-                  "text": "The list of privileged users has not been reviewed recently (e.g.",
+                  "text": "Privileged user access is granted on a system-wide basis rather than by role or function(s).",
                   "index": 4
                 },
                 {
                   "id": "B2.c.NA.5",
                   "outcomeId": "B2.c",
                   "level": "not-achieved",
-                  "text": "within the last 12 months).",
+                  "text": "Privileged user access to your essential function(s) is via generic, shared or default name accounts.",
                   "index": 5
                 },
                 {
                   "id": "B2.c.NA.6",
                   "outcomeId": "B2.c",
                   "level": "not-achieved",
-                  "text": "Privileged user access is granted on a system-wide basis rather than by role or function(s).",
+                  "text": "Where there are \"always on\" terminals which can perform privileged actions (such as in a control room), there are no additional controls (e.g. physical controls) to ensure access is appropriately restricted.",
                   "index": 6
                 },
                 {
                   "id": "B2.c.NA.7",
                   "outcomeId": "B2.c",
                   "level": "not-achieved",
-                  "text": "Privileged user access to your essential function(s) is via generic, shared or default name accounts.",
-                  "index": 7
-                },
-                {
-                  "id": "B2.c.NA.8",
-                  "outcomeId": "B2.c",
-                  "level": "not-achieved",
-                  "text": "Where there are \"always on\" terminals which can perform privileged actions (such as in a control room), there are no additional controls (e.g. physical controls) to ensure access is appropriately restricted.",
-                  "index": 8
-                },
-                {
-                  "id": "B2.c.NA.9",
-                  "outcomeId": "B2.c",
-                  "level": "not-achieved",
                   "text": "There is no logical separation between roles that an individual may have and hence the actions they perform (e.g. access to corporate email and privilege user actions).",
-                  "index": 9
+                  "index": 7
                 },
                 {
                   "id": "B2.c.PA.1",
@@ -1485,7 +1464,7 @@ export const caf32: Framework = {
                   "id": "B3.a.PA.1",
                   "outcomeId": "B3.a",
                   "level": "partially-achieved",
-                  "text": "You have identified and catalogued all the data important to the operation of the essential function(s), or that would assist an attacker.",
+                  "text": "You regularly review location, transmission, quantity and quality of data important to the operation of network and information systems supporting your essential function(s).",
                   "index": 1
                 },
                 {
@@ -1614,13 +1593,6 @@ export const caf32: Framework = {
                   "level": "not-achieved",
                   "text": "Critical data paths that could fail, be jammed, be overloaded, etc.",
                   "index": 3
-                },
-                {
-                  "id": "B3.b.NA.4",
-                  "outcomeId": "B3.b",
-                  "level": "not-achieved",
-                  "text": "have no alternative path.",
-                  "index": 4
                 },
                 {
                   "id": "B3.b.PA.1",
@@ -1953,36 +1925,29 @@ export const caf32: Framework = {
                   "id": "B4.a.A.2",
                   "outcomeId": "B4.a",
                   "level": "achieved",
-                  "text": "Your network and information systems are segregated into appropriate security zones (e.g.",
+                  "text": "Your network and information systems are segregated into appropriate security zones (e.g. systems supporting the essential function(s) are segregated in a highly trusted, more secure zone).",
                   "index": 2
                 },
                 {
                   "id": "B4.a.A.3",
                   "outcomeId": "B4.a",
                   "level": "achieved",
-                  "text": "systems supporting the essential function(s) are segregated in a highly trusted, more secure zone).",
+                  "text": "The network and information systems supporting your essential function(s) are designed to have simple data flows between components to support effective security monitoring.",
                   "index": 3
                 },
                 {
                   "id": "B4.a.A.4",
                   "outcomeId": "B4.a",
                   "level": "achieved",
-                  "text": "The network and information systems supporting your essential function(s) are designed to have simple data flows between components to support effective security monitoring.",
+                  "text": "The network and information systems supporting your essential function(s) are designed to be easy to recover.",
                   "index": 4
                 },
                 {
                   "id": "B4.a.A.5",
                   "outcomeId": "B4.a",
                   "level": "achieved",
-                  "text": "The network and information systems supporting your essential function(s) are designed to be easy to recover.",
-                  "index": 5
-                },
-                {
-                  "id": "B4.a.A.6",
-                  "outcomeId": "B4.a",
-                  "level": "achieved",
                   "text": "Content-based attacks are mitigated for all inputs to network and information systems that affect the essential function(s) (e.g. via transformation and inspection).",
-                  "index": 6
+                  "index": 5
                 }
               ]
             },
@@ -2243,7 +2208,7 @@ export const caf32: Framework = {
                   "id": "B4.d.PA.1",
                   "outcomeId": "B4.d",
                   "level": "partially-achieved",
-                  "text": "All the following statements below are true You maintain a current understanding of the exposure of your essential function(s) to publicly-known vulnerabilities.",
+                  "text": "You maintain a current understanding of the exposure of your essential function(s) to publicly-known vulnerabilities.",
                   "index": 1
                 },
                 {
@@ -2364,22 +2329,15 @@ export const caf32: Framework = {
                   "id": "B5.a.A.2",
                   "outcomeId": "B5.a",
                   "level": "achieved",
-                  "text": "Appropriate use is made of different test methods (e.g.",
+                  "text": "Appropriate use is made of different test methods (e.g. manual fail-over, table-top exercises, or red-teaming).",
                   "index": 2
                 },
                 {
                   "id": "B5.a.A.3",
                   "outcomeId": "B5.a",
                   "level": "achieved",
-                  "text": "manual fail-over, table-top exercises, or red-teaming).",
-                  "index": 3
-                },
-                {
-                  "id": "B5.a.A.4",
-                  "outcomeId": "B5.a",
-                  "level": "achieved",
                   "text": "You use your security awareness and threat intelligence sources to identify new or heightened levels of risk, which result in immediate and potentially temporary security measures to enhance the security of your network and information systems (e.g. in response to a widespread outbreak of very damaging malware).",
-                  "index": 4
+                  "index": 3
                 }
               ]
             },
@@ -2428,57 +2386,36 @@ export const caf32: Framework = {
                   "id": "B5.b.PA.3",
                   "outcomeId": "B5.b",
                   "level": "partially-achieved",
-                  "text": "Resource limitations (e.g.",
+                  "text": "Resource limitations (e.g. network bandwidth, single network paths) have been identified but not fully mitigated.",
                   "index": 3
-                },
-                {
-                  "id": "B5.b.PA.4",
-                  "outcomeId": "B5.b",
-                  "level": "partially-achieved",
-                  "text": "network bandwidth, single network paths) have been identified but not fully mitigated.",
-                  "index": 4
                 },
                 {
                   "id": "B5.b.A.1",
                   "outcomeId": "B5.b",
                   "level": "achieved",
-                  "text": "Network and information systems supporting the operation of your essential function(s) are segregated from other business and external systems by appropriate technical and physical means (e.g.",
+                  "text": "Network and information systems supporting the operation of your essential function(s) are segregated from other business and external systems by appropriate technical and physical means (e.g. separate network and system infrastructure with independent user administration). Internet services are not accessible from network and information systems supporting the essential function(s).",
                   "index": 1
                 },
                 {
                   "id": "B5.b.A.2",
                   "outcomeId": "B5.b",
                   "level": "achieved",
-                  "text": "separate network and system infrastructure with independent user administration). Internet services are not accessible from network and information systems supporting the essential function(s).",
+                  "text": "You have identified and mitigated all resource limitations (e.g. bandwidth limitations and single network paths).",
                   "index": 2
                 },
                 {
                   "id": "B5.b.A.3",
                   "outcomeId": "B5.b",
                   "level": "achieved",
-                  "text": "You have identified and mitigated all resource limitations (e.g. bandwidth limitations and single network paths).",
+                  "text": "You have identified and mitigated any geographical constraints or weaknesses. (e.g. systems that your essential function(s) depends upon are replicated in another location, important network connectivity has alternative physical paths and service providers).",
                   "index": 3
                 },
                 {
                   "id": "B5.b.A.4",
                   "outcomeId": "B5.b",
                   "level": "achieved",
-                  "text": "You have identified and mitigated any geographical constraints or weaknesses. (e.g.",
-                  "index": 4
-                },
-                {
-                  "id": "B5.b.A.5",
-                  "outcomeId": "B5.b",
-                  "level": "achieved",
-                  "text": "systems that your essential function(s) depends upon are replicated in another location, important network connectivity has alternative physical paths and service providers).",
-                  "index": 5
-                },
-                {
-                  "id": "B5.b.A.6",
-                  "outcomeId": "B5.b",
-                  "level": "achieved",
                   "text": "You review and update assessments of dependencies, resource and geographical limitations and mitigations when necessary.",
-                  "index": 6
+                  "index": 4
                 }
               ]
             },
@@ -2784,29 +2721,22 @@ export const caf32: Framework = {
                   "id": "C1.a.NA.2",
                   "outcomeId": "C1.a",
                   "level": "not-achieved",
-                  "text": "You do not confidently detect the presence or absence of Indicators of Compromise (IoCs) on your essential function(s), such as known malicious command and control signatures (e.g.",
+                  "text": "You do not confidently detect the presence or absence of Indicators of Compromise (IoCs) on your essential function(s), such as known malicious command and control signatures (e.g. because applying the indicator is difficult or your log data is not sufficiently detailed).",
                   "index": 2
                 },
                 {
                   "id": "C1.a.NA.3",
                   "outcomeId": "C1.a",
                   "level": "not-achieved",
-                  "text": "because applying the indicator is difficult or your log data is not sufficiently detailed).",
+                  "text": "You are not able to audit the activities of users in relation to your essential function(s).",
                   "index": 3
                 },
                 {
                   "id": "C1.a.NA.4",
                   "outcomeId": "C1.a",
                   "level": "not-achieved",
-                  "text": "You are not able to audit the activities of users in relation to your essential function(s).",
-                  "index": 4
-                },
-                {
-                  "id": "C1.a.NA.5",
-                  "outcomeId": "C1.a",
-                  "level": "not-achieved",
                   "text": "You do not capture any traffic crossing your network boundary including as a minimum IP connections.",
-                  "index": 5
+                  "index": 4
                 },
                 {
                   "id": "C1.a.PA.1",
@@ -3493,7 +3423,7 @@ export const caf32: Framework = {
                   "id": "D1.a.NA.1",
                   "outcomeId": "D1.a",
                   "level": "not-achieved",
-                  "text": "At least one of the following statements is true Your incident response plan is not documented.",
+                  "text": "Your incident response plan is not documented.",
                   "index": 1
                 },
                 {
@@ -3514,7 +3444,7 @@ export const caf32: Framework = {
                   "id": "D1.a.PA.1",
                   "outcomeId": "D1.a",
                   "level": "partially-achieved",
-                  "text": "All the following statements are true Your incident response plan covers your essential function(s).",
+                  "text": "Your incident response plan covers your essential function(s).",
                   "index": 1
                 },
                 {
@@ -3542,7 +3472,7 @@ export const caf32: Framework = {
                   "id": "D1.a.A.1",
                   "outcomeId": "D1.a",
                   "level": "achieved",
-                  "text": "All the following statements are true Your incident response plan is based on a clear understanding of the security risks to the network and information systems supporting your essential function(s).",
+                  "text": "Your incident response plan is based on a clear understanding of the security risks to the network and information systems supporting your essential function(s).",
                   "index": 1
                 },
                 {
@@ -3556,22 +3486,15 @@ export const caf32: Framework = {
                   "id": "D1.a.A.3",
                   "outcomeId": "D1.a",
                   "level": "achieved",
-                  "text": "Your incident response plan is documented and integrated with wider organisational business plans and supply chain response plans, as well as dependencies on supporting infrastructure (e.g.",
+                  "text": "Your incident response plan is documented and integrated with wider organisational business plans and supply chain response plans, as well as dependencies on supporting infrastructure (e.g. power, cooling etc).",
                   "index": 3
                 },
                 {
                   "id": "D1.a.A.4",
                   "outcomeId": "D1.a",
                   "level": "achieved",
-                  "text": "power, cooling etc).",
-                  "index": 4
-                },
-                {
-                  "id": "D1.a.A.5",
-                  "outcomeId": "D1.a",
-                  "level": "achieved",
                   "text": "Your incident response plan is communicated and understood by the business areas involved with the operation of your essential function(s).",
-                  "index": 5
+                  "index": 4
                 }
               ]
             },

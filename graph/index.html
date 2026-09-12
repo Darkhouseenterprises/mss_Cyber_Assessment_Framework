@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Machine Simplified Schema — graph</title>
+  <style>
+    :root {
+      --bg: #0e1014;
+      --panel: #161a21;
+      --ink: #e8e6e1;
+      --muted: #8b9088;
+      --line: #2a3038;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 14px/1.45 "Iowan Old Style", "Palatino Linotype", Palatino, serif; }
+    header {
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+      padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--panel);
+    }
+    header h1 { font-size: 16px; font-weight: 600; margin: 0; letter-spacing: 0.02em; }
+    header .sub { color: var(--muted); font-size: 12px; }
+    select, input {
+      background: #0e1014; color: var(--ink); border: 1px solid var(--line);
+      padding: 6px 10px; border-radius: 4px; font: inherit;
+    }
+    main { display: grid; grid-template-columns: 1fr 320px; height: calc(100% - 57px); }
+    canvas { width: 100%; height: 100%; display: block; cursor: grab; }
+    aside { border-left: 1px solid var(--line); background: var(--panel); padding: 16px; overflow: auto; }
+    aside h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 8px; }
+    aside .kind { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+    aside .title { font-size: 15px; margin-bottom: 10px; }
+    aside .body { color: #c9c6bf; font-size: 13px; }
+    .legend { position: absolute; left: 16px; bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px 14px; max-width: 50%; }
+    .legend span { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+    .swatch { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    @media (max-width: 800px) {
+      main { grid-template-columns: 1fr; grid-template-rows: 1fr 220px; }
+      aside { border-left: none; border-top: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 id="heading">Machine Simplified Schema</h1>
+      <div class="sub" id="counts"></div>
+    </div>
+    <select id="which"></select>
+    <input id="q" type="search" placeholder="Find an id or title" />
+  </header>
+  <main>
+    <div style="position:relative">
+      <canvas id="c"></canvas>
+      <div class="legend" id="legend"></div>
+    </div>
+    <aside>
+      <h2>Inspector</h2>
+      <div class="kind" id="ikind">Click a node</div>
+      <div class="title" id="ilabel"></div>
+      <div class="body" id="ibody">The graph is the joints of the standard — parent/child and the cross-references that hang them together.</div>
+    </aside>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    const COLOURS = {
+      book: "#f4f1ea", framework: "#f4f1ea",
+      part: "#c45c26", objective: "#c45c26",
+      "main-principle": "#e2a03f", principle: "#4c8bf5",
+      "supporting-principle": "#7c5cbf",
+      chapter: "#3d8b6e", outcome: "#3d8b6e",
+      role: "#d4a017", process: "#2a9d8f", artefact: "#6b8f71",
+      body: "#8b6b4a", control: "#b85c38",
+      "rcf-pillar": "#c45c26", "rcf-block": "#8c6b4f",
+      "three-line": "#4c8bf5", category: "#6b8f71", annex: "#8b9088",
+      "process-step": "#2a9d8f", treatment: "#b85c38", removed: "#e85d4c"
+    };
+    const graphs = window.MSS_GRAPHS || {};
+    const names = Object.keys(graphs);
+    const sel = document.getElementById("which");
+    names.forEach((n, i) => {
+      const o = document.createElement("option");
+      o.value = n; o.textContent = n; if (i === 0) o.selected = true;
+      sel.appendChild(o);
+    });
+
+    const canvas = document.getElementById("c");
+    const ctx = canvas.getContext("2d");
+    let graph, nodes, edges, sim, selected = null, hover = null, dragging = null;
+
+    function layout(g) {
+      graph = g;
+      nodes = g.nodes.map((n, i) => {
+        const a = (i / g.nodes.length) * Math.PI * 2;
+        return { ...n, x: Math.cos(a) * 180, y: Math.sin(a) * 180, vx: 0, vy: 0 };
+      });
+      const ix = Object.fromEntries(nodes.map((n, i) => [n.id, i]));
+      edges = g.edges
+        .map((e) => ({ ...e, a: ix[e.source], b: ix[e.target] }))
+        .filter((e) => e.a != null && e.b != null);
+      document.getElementById("heading").textContent = g.title;
+      document.getElementById("counts").textContent =
+        `${nodes.length} nodes · ${edges.length} edges`;
+      const kinds = [...new Set(nodes.map((n) => n.kind))];
+      document.getElementById("legend").innerHTML = kinds.map((k) =>
+        `<span><i class="swatch" style="background:${COLOURS[k] || "#888"}"></i>${k}</span>`
+      ).join("");
+    }
+
+    function step() {
+      const n = nodes.length;
+      if (!n) return;
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          let dx = nodes[j].x - nodes[i].x;
+          let dy = nodes[j].y - nodes[i].y;
+          let d2 = dx * dx + dy * dy || 0.01;
+          const f = 4200 / d2;
+          const d = Math.sqrt(d2);
+          dx /= d; dy /= d;
+          nodes[i].vx -= f * dx; nodes[i].vy -= f * dy;
+          nodes[j].vx += f * dx; nodes[j].vy += f * dy;
+        }
+      }
+      for (const e of edges) {
+        const a = nodes[e.a], b = nodes[e.b];
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const dist = Math.hypot(dx, dy) || 1;
+        const rest = e.kind === "contains" ? 70 : 110;
+        const f = (dist - rest) * 0.012;
+        const ux = dx / dist, uy = dy / dist;
+        a.vx += f * ux; a.vy += f * uy;
+        b.vx -= f * ux; b.vy -= f * uy;
+      }
+      for (const n of nodes) {
+        n.vx += -n.x * 0.002; n.vy += -n.y * 0.002;
+        n.vx *= 0.86; n.vy *= 0.86;
+        if (n !== dragging) { n.x += n.vx; n.y += n.vy; }
+      }
+    }
+
+    let scale = 1, ox = 0, oy = 0;
+    function resize() {
+      const r = canvas.parentElement.getBoundingClientRect();
+      canvas.width = r.width * devicePixelRatio;
+      canvas.height = r.height * devicePixelRatio;
+      canvas.style.width = r.width + "px";
+      canvas.style.height = r.height + "px";
+    }
+    function toWorld(ev) {
+      const r = canvas.getBoundingClientRect();
+      const x = (ev.clientX - r.left - r.width / 2 - ox) / scale;
+      const y = (ev.clientY - r.top - r.height / 2 - oy) / scale;
+      return { x, y };
+    }
+    function hit(ev) {
+      const p = toWorld(ev);
+      let best = null, bd = 14 / scale;
+      for (const n of nodes) {
+        const d = Math.hypot(n.x - p.x, n.y - p.y);
+        if (d < bd) { bd = d; best = n; }
+      }
+      return best;
+    }
+    function draw() {
+      const w = canvas.width, h = canvas.height;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      ctx.setTransform(
+        scale * devicePixelRatio, 0, 0, scale * devicePixelRatio,
+        w / 2 + ox * devicePixelRatio, h / 2 + oy * devicePixelRatio
+      );
+      ctx.lineWidth = 1 / scale;
+      for (const e of edges) {
+        const a = nodes[e.a], b = nodes[e.b];
+        const hot = selected && (a.id === selected.id || b.id === selected.id);
+        ctx.strokeStyle = hot ? "rgba(232,230,225,0.55)" : "rgba(232,230,225,0.12)";
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+      for (const n of nodes) {
+        const r = n.kind === "book" || n.kind === "framework" ? 8 : n.kind.includes("principle") || n.kind === "objective" || n.kind === "part" ? 6 : 4.5;
+        ctx.fillStyle = COLOURS[n.kind] || "#888";
+        ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, Math.PI * 2); ctx.fill();
+        if (n === selected || n === hover) {
+          ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.4 / scale;
+          ctx.stroke();
+        }
+        const show = scale > 0.85 || n === selected || n === hover || n.kind === "book" || n.kind === "framework" || n.kind === "objective" || n.kind === "part" || n.kind === "main-principle";
+        if (show) {
+          ctx.fillStyle = "#e8e6e1";
+          ctx.font = `${11 / scale}px ui-sans-serif, system-ui, sans-serif`;
+          ctx.fillText(n.label, n.x + r + 3, n.y + 3);
+        }
+      }
+    }
+
+    function inspect(n) {
+      selected = n;
+      document.getElementById("ikind").textContent = n ? n.kind : "";
+      document.getElementById("ilabel").textContent = n ? n.label : "";
+      document.getElementById("ibody").textContent = n ? (n.title || "") : "";
+    }
+
+    canvas.addEventListener("mousemove", (ev) => {
+      if (dragging) {
+        const p = toWorld(ev);
+        dragging.x = p.x; dragging.y = p.y; dragging.vx = 0; dragging.vy = 0;
+        return;
+      }
+      hover = hit(ev);
+      canvas.style.cursor = hover ? "pointer" : "grab";
+    });
+    canvas.addEventListener("mousedown", (ev) => {
+      const n = hit(ev);
+      if (n) { dragging = n; inspect(n); }
+    });
+    window.addEventListener("mouseup", () => { dragging = null; });
+    canvas.addEventListener("click", (ev) => {
+      const n = hit(ev);
+      inspect(n);
+    });
+    canvas.addEventListener("wheel", (ev) => {
+      ev.preventDefault();
+      const factor = ev.deltaY < 0 ? 1.08 : 0.92;
+      scale = Math.min(4, Math.max(0.25, scale * factor));
+    }, { passive: false });
+
+    document.getElementById("q").addEventListener("input", (ev) => {
+      const q = ev.target.value.toLowerCase();
+      if (!q) return;
+      const n = nodes.find((x) =>
+        x.id.toLowerCase().includes(q) ||
+        x.label.toLowerCase().includes(q) ||
+        (x.title || "").toLowerCase().includes(q)
+      );
+      if (n) inspect(n);
+    });
+    sel.addEventListener("change", () => layout(graphs[sel.value]));
+
+    window.addEventListener("resize", resize);
+    resize();
+    if (names.length) layout(graphs[names[0]]);
+    function loop() {
+      for (let i = 0; i < 2; i++) step();
+      draw();
+      requestAnimationFrame(loop);
+    }
+    loop();
+  </script>
+</body>
+</html>

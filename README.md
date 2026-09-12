@@ -34,7 +34,24 @@ mapForward("C2.a");
 ```
 
 `npm run validate` parses both instances and the v3.2→v4.0 mapping
-through Zod and exits non-zero on any violation.
+through Zod and exits non-zero on any violation. It also writes
+instance graphs to `graph/data.js`. Open `graph/index.html` and switch
+between CAF v4.0, v3.2, and the mapping.
+
+```mermaid
+flowchart TB
+  CAF --> ObjA[A Managing security risk]
+  CAF --> ObjB[B Protecting against cyber attack]
+  CAF --> ObjC[C Detecting events]
+  CAF --> ObjD[D Minimising impact]
+  ObjA --> A1[A1 Governance]
+  A1 --> A1a[A1.a Board Direction]
+  A1 --> A1b[A1.b Roles]
+  A1 --> A1c[A1.c Decision-making]
+  ObjC --> C2v32["v3.2 C2 Proactive Security Event Discovery"]
+  ObjC --> C2v40["v4.0 C2 Threat Hunting"]
+  C2v32 -.->|rewritten| C2v40
+```
 
 ## What is in the schema
 

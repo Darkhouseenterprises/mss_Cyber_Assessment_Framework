@@ -29,7 +29,7 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "LICENSE", "NOTICE", "README.md"],
+  "files": ["dist", "LICENSE", "NOTICE", "README.md", "graph"],
   "scripts": {
     "check": "tsc --noEmit",
     "build": "tsc",

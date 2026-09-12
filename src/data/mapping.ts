@@ -227,7 +227,7 @@ export const v32ToV40: Mapping[] = [
     "fromId": "C1.a",
     "toId": "C1.a",
     "change": "rewritten",
-    "note": "adversely affect the security or resiliency of network and information system(s) supporting the operation of your essential function(s)."
+    "note": "Title rewritten: Monitoring Coverage → Sources and Tools for Logging and Monitoring"
   },
   {
     "fromId": "C1.b",
@@ -271,7 +271,7 @@ export const v32ToV40: Mapping[] = [
     "fromId": "D1.a",
     "toId": "D1.a",
     "change": "rewritten",
-    "note": "systems supporting the operation of your essential function(s) and covers a range of incident scenarios."
+    "note": "Response Plan wording rewritten in v4.0"
   },
   {
     "fromId": "D1.b",
