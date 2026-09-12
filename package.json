@@ -1,0 +1,45 @@
+{
+  "name": "mss-cyber-assessment-framework",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Machine Simplified Schema of NCSC CAF v3.2 and v4.0 with outcome mapping. Zod-validated citation backbone for LLMs.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Darkhouse Enterprises Ltd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Darkhouseenterprises/mss_Cyber_Assessment_Framework.git"
+  },
+  "homepage": "https://github.com/Darkhouseenterprises/mss_Cyber_Assessment_Framework",
+  "keywords": [
+    "mss",
+    "caf",
+    "ncsc",
+    "cyber-assessment-framework",
+    "uk-government",
+    "schema",
+    "zod",
+    "llm"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "LICENSE", "NOTICE", "README.md"],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsc",
+    "validate": "npm run build && node dist/validate.js"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "typescript": "^5.4.5"
+  }
+}
