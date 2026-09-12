@@ -4,7 +4,7 @@
   "private": false,
   "description": "Machine Simplified Schema of NCSC CAF v3.2 and v4.0 with outcome mapping. Zod-validated citation backbone for LLMs.",
   "type": "module",
-  "license": "MIT",
+  "license": "(MIT AND OGL-UK-3.0)",
   "author": "Darkhouse Enterprises Ltd",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "LICENSE", "NOTICE", "README.md", "graph"],
+  "files": ["dist", "LICENSE", "LICENSES", "NOTICE", "README.md", "graph"],
   "scripts": {
     "check": "tsc --noEmit",
     "build": "tsc",

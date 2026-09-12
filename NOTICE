@@ -1,21 +1,20 @@
-Machine Simplified Schema — Cyber Assessment Framework
-Copyright (c) 2026 Darkhouse Enterprises Ltd
+Contains public sector information licensed under the Open Government
+Licence v3.0.
 
-The Cyber Assessment Framework (CAF) text reproduced in this package is
-Crown Copyright, licensed under the Open Government Licence v3.0:
 https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 
+Work: Cyber Assessment Framework (CAF) v3.2 and v4.0
+Information Provider: National Cyber Security Centre (NCSC)
 Source: https://www.ncsc.gov.uk/collection/cyber-assessment-framework
-Retrieved: 2026-09-12
-
 CAF v4.0 published 4 August 2025
 https://www.ncsc.gov.uk/sites/default/files/documents/NCSC-Cyber-Assessment-Framework-4.0.pdf
-
 CAF v3.2 published 15 April 2024
 https://www.ncsc.gov.uk/sites/default/files/documents/Cyber%20Assessment%20Framework%20V3.2.pdf
+Retrieved: 2026-09-12
 
-This compilation (TypeScript/Zod schema, identifiers, mapping, and
-tooling) is MIT-licensed by Darkhouse Enterprises Ltd. It is not an
-official NCSC or UK Government product and is not a CAF assessment.
+Crown copyright in that information remains with the Crown.
 
-You must retain the OGL attribution when redistributing Crown content.
+The TypeScript/Zod schema, identifiers, mapping and tooling are original
+work of Darkhouse Enterprises Ltd, MIT-licensed (LICENSES/MIT.txt).
+This compilation is not an official NCSC or UK Government product and
+is not a CAF assessment.

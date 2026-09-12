@@ -1,21 +1,56 @@
-MIT License
+Licence
+=======
 
-Copyright (c) 2026 Darkhouse Enterprises Ltd
+This repository contains two kinds of material. They are licensed
+separately. Copyright in the Crown information is not assigned and
+cannot be assigned by this compilation.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Crown copyright information (Open Government Licence v3.0)
+-------------------------------------------------------------
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The text of the Cyber Assessment Framework (CAF) reproduced in this
+package is Crown copyright.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+The Crown makes that information available for use under the Open
+Government Licence v3.0, which is the UK public sector's standard
+free-to-use licence:
+
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+
+A copy is in LICENSES/OGL-UK-3.0.txt.
+
+Crown copyright remains with the Crown. Re-using the information under
+OGL does not transfer ownership. It does not grant official status or
+endorsement. It does not permit use of departmental logos, crests or
+the Royal Arms.
+
+You are free to copy, adapt, publish, distribute and commercially
+exploit that information, provided you acknowledge the source:
+
+Contains public sector information licensed under the Open Government
+Licence v3.0.
+
+Information Provider: National Cyber Security Centre (NCSC)
+Source: https://www.ncsc.gov.uk/collection/cyber-assessment-framework
+CAF v4.0 (4 August 2025):
+https://www.ncsc.gov.uk/sites/default/files/documents/NCSC-Cyber-Assessment-Framework-4.0.pdf
+CAF v3.2 (15 April 2024):
+https://www.ncsc.gov.uk/sites/default/files/documents/Cyber%20Assessment%20Framework%20V3.2.pdf
+Retrieved: 2026-09-12
+
+See NOTICE for the attribution record.
+
+2. Original compilation (MIT)
+-----------------------------
+
+The TypeScript/Zod schema, identifiers, v3.2↔v4.0 mapping, query
+helpers, instance graph and tooling added by Darkhouse Enterprises Ltd
+are original work and are licensed under the MIT Licence. See
+LICENSES/MIT.txt.
+
+That licence covers the compilation, not the Crown text.
+
+This package is not an official NCSC or UK Government product and is
+not a CAF assessment.
+
+SPDX-License-Identifier: MIT AND OGL-UK-3.0

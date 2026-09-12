@@ -70,8 +70,21 @@ v3.2 principle C2 remains **Proactive Security Event Discovery**
 Discovery). v4.0 C2 is **Threat Hunting**.
 
 Source: <https://www.ncsc.gov.uk/collection/cyber-assessment-framework>
-retrieved 2026-09-12. Crown content is OGL v3.0 (see `NOTICE`). Schema
-and tooling are MIT.
+retrieved 2026-09-12.
+
+## Licence
+
+CAF text is **Crown copyright**. It stays with the Crown.
+The Crown's free-to-use instrument is the
+[Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+This compilation does not transfer that copyright and does not grant
+official status. It is not a CAF assessment.
+
+Contains public sector information licensed under the Open Government
+Licence v3.0.
+
+The schema, identifiers, mapping and tooling are original work,
+MIT-licensed. See `LICENSE`, `NOTICE` and `LICENSES/`.
 
 ## Series
 
